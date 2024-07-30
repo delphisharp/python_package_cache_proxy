@@ -3,7 +3,6 @@ FROM python:3.10-bookworm
 WORKDIR /app
 ENV APP_DIR=/app/devpi
 ENV PORT=8002
-ENV USER=pypi
 
 COPY requirements.txt ./
 

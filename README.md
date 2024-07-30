@@ -47,8 +47,7 @@ vi ./quetz/init_channels.sql
 ```shell
 vi ./devpi/main.py
 ```
-修改 变量:  _pypi_ixconfig_default 定义
-
+修改变量: _pypi_ixconfig_default 的定义
 
 
 ### 启动
