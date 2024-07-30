@@ -1,0 +1,6 @@
+[sqlalchemy]
+database_url = "sqlite:///./quetz.sqlite"
+
+[session]
+secret = "77ccd5d0a236a87eb909773e6c073f7f9f9cb0efb80a4a5a00ef6f444c97b737"
+https_only = false

@@ -1,0 +1,5 @@
+devpi-server==6.12.1
+devpi-client==7.1.0
+devpi-web==4.2.2
+devpi==2.2.0
+supervisor

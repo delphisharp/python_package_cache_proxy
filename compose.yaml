@@ -1,0 +1,36 @@
+services:
+    pypi_proxy:
+        container_name: pypi_proxy
+        networks:
+            - python_proxy
+        volumes:
+            - $PYPI_PATH:/app/devpi
+        image: pypi_proxy:latest
+
+    conda_proxy:
+        container_name: conda_proxy
+        networks:
+            - python_proxy
+        volumes:
+            - $CONDA_PATH:/app/quetz/channels
+        image: conda_proxy:latest
+
+    nginx_proxy:
+      container_name: nginx_proxy
+      networks:
+        - python_proxy
+      ports:
+        - 8003:8003
+        - 8004:8004
+      volumes:
+        - $NGINX_CONF_PATH:/etc/nginx/nginx.conf
+        - $PYPI_PATH:/app/devpi
+        - $CONDA_PATH:/app/quetz/channels
+      expose:
+        - 8003
+        - 8004
+      image: nginx:stable
+
+networks:
+    python_proxy:
+        name: python_proxy
